@@ -1,0 +1,19 @@
+stages:
+    - build
+
+build:dev:
+    stage: build
+
+    script:
+        - cd /home/ubuntu/figk-studio-fe/
+        - git config --list
+        - git remote -v
+        - git pull origin main
+        - yarn
+
+    only:
+        refs:
+            - main
+
+    tags:
+        - figk-studio
